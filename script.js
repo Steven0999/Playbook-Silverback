@@ -49,7 +49,7 @@ const PLAYBOOK = {
         { // Step 1: Pass to Wing and Initial Cut
             description: "1 passes to the Wing (2). 1 cuts to the weak side wing. Bigs (4, 5) maintain low post positions in preparation for the screen.",
             positions: [
-                { id: 1, label: '1', color: '#ef4444', x: 10, y: 70, isBall: false },
+                { id: 1, label: '1', color: '#ef4444', x: 10, y: 85, isBall: false },
                 { id: 2, label: '2', color: '#f59e0b', x: 25, y: 15, isBall: false }, 
                 { id: 3, label: '3', color: '#10b981', x: 7.5, y: 85, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 35, isBall: false },
