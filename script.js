@@ -88,7 +88,9 @@ const PLAYBOOK = {
                 { id: 6, label: '🏀', color: 'none', x: 25.5, y: 15, isBall: true }
             ],
             highlight: [2, 4, 5, 6],
-            actions: [] 
+            actions: [
+                {  type: 'pass', fromId: 2, toId: 4},
+                {  type: 'pass', fromId: 2, toId: 5}
         }
     ],
     Stack: [
