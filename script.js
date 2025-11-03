@@ -52,8 +52,8 @@ const PLAYBOOK = {
                 { id: 1, label: '1', color: '#ef4444', x: 10, y: 70, isBall: false },
                 { id: 2, label: '2', color: '#f59e0b', x: 25, y: 15, isBall: false }, 
                 { id: 3, label: '3', color: '#10b981', x: 7.5, y: 85, isBall: false }, 
-                { id: 4, label: '4', color: '#3b82f6', x: 10, y: 35, isBall: false },
-                { id: 5, label: '5', color: '#8b5cf6', x: 10, y: 65, isBall: false },
+                { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 35, isBall: false },
+                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 65, isBall: false },
                 { id: 6, label: '🏀', color: 'none', x: 25.5, y: 15, isBall: true }
             ],
             highlight: [1, 2, 6],
@@ -64,11 +64,11 @@ const PLAYBOOK = {
         { // Step 2: Screen Action
             description: "Screen Action: 1 screens for 3 (Weak Side Wing Swap). Big (4) sets a **screen** for Big (5). Both 4 and 5 remain locked in their low post positions.",
             positions: [
-                { id: 1, label: '1', color: '#ef4444', x: 7.5, y: 85, isBall: false },
+                { id: 1, label: '1', color: '#ef4444', x: 12, y: 72, isBall: false },
                 { id: 2, label: '2', color: '#f59e0b', x: 25, y: 15, isBall: false }, 
                 { id: 3, label: '3', color: '#10b981', x: 10, y: 70, isBall: false },
-                { id: 4, label: '4', color: '#3b82f6', x: 10, y: 60, isBall: false },
-                { id: 5, label: '5', color: '#8b5cf6', x: 10, y: 65, isBall: false },
+                { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 60, isBall: false },
+                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 65, isBall: false },
                 { id: 6, label: '🏀', color: 'none', x: 25.5, y: 15, isBall: true } 
             ],
             highlight: [1, 3, 4, 5],
@@ -78,12 +78,12 @@ const PLAYBOOK = {
             ]
         },
         { // Step 3: Reset and Bigs Swap (4/5 NOW SWAP)
-            description: "**Position Swap (4 & 5):** Wing (2) dribbles to the top of the key. **Position 4** pops out to the high weak side, and **Position 5** cuts across to the strong-side low block, completing the requested post swap.",
+            description: "**Position Swap (4 & 5):** Wing (1) runs to the top of the key. **Position 4** pops out to the high weak side, and **Position 5** cuts across to the strong-side low block, completing the requested post swap.",
             positions: [
                 { id: 1, label: '1', color: '#ef4444', x: 35, y: 85, isBall: false },
                 { id: 2, label: '2', color: '#f59e0b', x: 35, y: 50, isBall: false },
-                { id: 3, label: '3', color: '#10b981', x: 23, y: 15, isBall: false },
-                { id: 4, label: '4', color: '#3b82f6', x: 10, y: 65, isBall: false }, // P4 (was low) pops high weak side (SWAP)
+                { id: 3, label: '3', color: '#10b981', x: 35, y: 50, isBall: false },
+                { id: 4, label: '4', color: '#3b82f6', x: 10, y: 65, isBall: false }, // P4 (was low) stays low weak side (SWAP)
                 { id: 5, label: '5', color: '#8b5cf6', x: 10, y: 35, isBall: false }, // P5 (was low) cuts to strong low block (SWAP)
                 { id: 6, label: '🏀', color: 'none', x: 35.5, y: 50, isBall: true }
             ],
