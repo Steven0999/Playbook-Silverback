@@ -85,7 +85,7 @@ const PLAYBOOK = {
                 { id: 3, label: '3', color: '#10b981', x: 10, y: 70, isBall: false },
                 { id: 4, label: '4', color: '#3b82f6', x: 10, y: 65, isBall: false }, // P4 (was low) stays low weak side (SWAP)
                 { id: 5, label: '5', color: '#8b5cf6', x: 10, y: 35, isBall: false }, // P5 (was low) cuts to strong low block (SWAP)
-                { id: 6, label: '🏀', color: 'none', x: 35.5, y: 50, isBall: true }
+                { id: 6, label: '🏀', color: 'none', x: 10.5, y: 70, isBall: true }
             ],
             highlight: [2, 4, 5, 6],
             actions: [] 
