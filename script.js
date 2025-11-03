@@ -7,7 +7,7 @@ const THREE_PT_RADIUS_FT = 23.75;
 const THREE_POINT_SIDE_FT = 22;
 const playerBaseSize = 38;
 const ballBaseSize = 32;
-const ANIMATION_DELAY = 800; // Time in ms for player movement (matches CSS transition)
+const ANIMATION_DELAY = 600; // Time in ms for player movement (matches CSS transition)
 
 // --- State Variables ---
 let isFullCourt = true;
