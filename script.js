@@ -108,7 +108,7 @@ const PLAYBOOK = {
         { // Step 1: First Big Cuts
             description: "First Big (5) cuts across the key to the opposite low block (= Option 1).",
             positions: [
-                { id: 1, label: '1', color: '#ef4444', x: 1, y: 50, isBall: false }, 
+                { id: 1, label: '1', color: '#ef4444', x: 1, y: 35, isBall: false }, 
                 { id: 2, label: '2', color: '#f59e0b', x: 10, y: 35, isBall: false }, 
                 { id: 3, label: '3', color: '#10b981', x: 15, y: 35, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 12.5, y: 35, isBall: false }, 
@@ -123,7 +123,7 @@ const PLAYBOOK = {
         { // Step 2: First Guard Cuts
             description: "First Guard (2) cuts to the corner (= Option 2 shot).",
             positions: [
-                { id: 1, label: '1', color: '#ef4444', x: 1, y: 50, isBall: false }, 
+                { id: 1, label: '1', color: '#ef4444', x: 1, y: 35, isBall: false }, 
                 { id: 2, label: '2', color: '#f59e0b', x: 10, y: 15, isBall: false }, 
                 { id: 3, label: '3', color: '#10b981', x: 15, y: 35, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 12.5, y: 35, isBall: false }, 
@@ -138,7 +138,7 @@ const PLAYBOOK = {
         { // Step 3: Second Big/Guard Cuts and Safety
             description: "Second Big (4) cuts to the basket (= Option 3). Second Guard (3) cuts to the 3-point line as the safety.",
             positions: [
-                { id: 1, label: '1', color: '#ef4444', x: 1, y: 50, isBall: false }, 
+                { id: 1, label: '1', color: '#ef4444', x: 1, y: 35, isBall: false }, 
                 { id: 2, label: '2', color: '#f59e0b', x: 10, y: 15, isBall: false }, 
                 { id: 3, label: '3', color: '#10b981', x: 40, y: 35, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 35, isBall: false }, 
@@ -153,7 +153,7 @@ const PLAYBOOK = {
         { // Step 4: Final Options (Ball passed to 3) - 3 now has ball
             description: "Ball is passed to the safety Guard (3). Big (4) sets a **screen** for Big (5) to cut to the basket.",
             positions: [
-                { id: 1, label: '1', color: '#ef4444', x: 1, y: 50, isBall: false }, 
+                { id: 1, label: '1', color: '#ef4444', x: 1, y: 35, isBall: false }, 
                 { id: 2, label: '2', color: '#f59e0b', x: 10, y: 15, isBall: false }, 
                 { id: 3, label: '3', color: '#10b981', x: 40, y: 35, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 50, isBall: false }, 
