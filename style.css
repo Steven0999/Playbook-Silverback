@@ -1,8 +1,7 @@
-/* --- CSS Variables and Global Styles --- */
 :root { 
-  --court-fill: #f6e7bf; /* Light brown/tan court color */
-  --line: #1f1f1f; /* Dark line color */
-  --border-color: #b57b2a; /* Darker brown border */
+  --court-fill: #f6e7bf;
+  --line: #1f1f1f;
+  --border-color: #b57b2a;
 }
 
 body { 
@@ -12,7 +11,6 @@ body {
   background: #fafafa;
 }
 
-/* --- Court and Token Styles --- */
 .court-container { 
   width: 100%; 
   max-width: 980px; 
@@ -28,7 +26,7 @@ body {
 .court-inner { 
   width: 100%; 
   height: 0; 
-  padding-bottom: 53.19%; /* Aspect ratio for 94x50 court (50/94 * 100) */
+  padding-bottom: 53.19%;
   position: relative; 
 }
 
@@ -37,8 +35,7 @@ svg {
   inset: 0; 
   width: 100%; 
   height: 100%; 
-  display: block; 
-  z-index: 1; /* SVG containing lines is below tokens */
+  z-index: 1;
 }
 
 .token { 
@@ -53,98 +50,52 @@ svg {
   font-weight: 700; 
   font-size: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
-  cursor: default; 
-  user-select: none;
-  /* Main transition for smooth movement */
-  transition: box-shadow 0.3s, transform 0.3s, background-color 0.2s, left 0.6s ease-in-out, top 0.6s ease-in-out;
-  z-index: 10; /* Higher Z-index ensures tokens are above all SVG lines */
+  transition: left 0.6s ease-in-out, top 0.6s ease-in-out;
+  z-index: 10;
 }
 
 .ball { 
-  width: 32px; /* Slightly larger ball */
+  width: 32px; 
   height: 32px; 
   font-size: 24px; 
   background: none; 
   box-shadow: none; 
-  z-index: 11; /* Ball slightly higher than players */
+  z-index: 11; 
+  line-height: 32px; /* 🆕 Fix for emoji centering */
   transition: left 0.6s ease-in-out, top 0.6s ease-in-out;
 }
 
 .highlighted {
-    border: 3px solid white;
-    transform: scale(1.15);
-    z-index: 12;
+  border: 3px solid white;
+  transform: scale(1.15);
+  z-index: 12;
 }
 
 .play-action-line {
-    fill: none;
-    stroke-linecap: round;
-    transition: stroke-dashoffset 0.5s ease-out;
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease-out;
 }
 
-/* --- ANIMATED PLAY/PAUSE BUTTON STYLES --- */
-#play-pause-button {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.icon-bar {
-  position: absolute;
-  width: 10px; /* Width of the pause bar */
-  height: 28px; /* Height of the pause bar */
-  background-color: white;
-  border-radius: 2px;
-  transition: transform 0.3s ease-in-out, 
-              height 0.3s ease-in-out, 
-              width 0.3s ease-in-out, 
-              left 0.3s ease-in-out;
-  transform-origin: center center;
+/* 🆕 Active Tab Style */
+.play-tab.active {
+  border-bottom-color: #4f46e5;
+  color: #4f46e5;
 }
 
-/* Bar 1 (Left Pause Bar) */
-#bar1 {
-  left: 14px;
-  transform: translateX(0);
-}
-/* Bar 2 (Right Pause Bar) */
-#bar2 {
-  left: 36px;
-  transform: translateX(0);
-}
-/* Bar 3 (Triangle Tip) - hidden in pause state */
-#bar3 {
-  width: 0;
-  height: 0;
-  left: 25px;
-  top: 25px;
-  opacity: 0;
-  background-color: transparent;
-  transform: rotate(0deg);
-  transition: all 0.3s ease-in-out;
+/* 🆕 Toast Visible Style */
+#toast-notification.visible {
+  opacity: 1 !important;
 }
 
-/* PLAY State (Morphing into Triangle) */
-#play-pause-button.play-state #bar1 {
-  /* Rotate left bar to be the top-left edge of the triangle */
-  height: 48px;
-  left: 25px; /* Center both bars */
-  transform: rotate(60deg) translate(8px, -8px);
-}
-#play-pause-button.play-state #bar2 {
-  /* Rotate right bar to be the bottom-left edge of the triangle */
-  height: 48px;
-  left: 25px; /* Center both bars */
-  transform: rotate(-60deg) translate(-8px, -8px);
-}
-#play-pause-button.play-state #bar3 {
-  /* This element acts as the right edge/closure of the triangle */
-  width: 10px;
-  height: 40px;
-  background-color: white;
-  opacity: 1;
-  left: 26px;
-  transform: rotate(180deg) translate(0px, 0px);
-}
+/* Play/Pause Button */
+#play-pause-button { position: relative; }
+.icon-bar { position: absolute; width: 10px; height: 28px; background: white; transition: 0.3s; }
 
+#bar1 { left: 14px; }
+#bar2 { left: 36px; }
+#bar3 { opacity: 0; }
+
+#play-pause-button.play-state #bar1 { height: 48px; left: 25px; transform: rotate(60deg) translate(8px, -8px); }
+#play-pause-button.play-state #bar2 { height: 48px; left: 25px; transform: rotate(-60deg) translate(-8px, -8px); }
+#play-pause-button.play-state #bar3 { width: 10px; height: 40px; background: white; opacity: 1; left: 26px; transform: rotate(180deg); }
