@@ -100,7 +100,7 @@ const PLAYBOOK = {
                 { id: 3, label: '3', color: '#10b981', x: 15, y: 35, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 12.5, y: 35, isBall: false }, 
                 { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 35, isBall: false }, 
-                { id: 6, label: '🏀', color: 'none', x: 1, y: 50, isBall: true }     
+                { id: 6, label: '🏀', color: 'none', x: 1, y: 35, isBall: true }     
             ],
             highlight: [5, 6],
             actions: []
@@ -113,7 +113,7 @@ const PLAYBOOK = {
                 { id: 3, label: '3', color: '#10b981', x: 15, y: 35, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 12.5, y: 35, isBall: false }, 
                 { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 50, isBall: false }, 
-                { id: 6, label: '🏀', color: 'none', x: 1, y: 50, isBall: true }
+                { id: 6, label: '🏀', color: 'none', x: 1, y: 35, isBall: true }
             ],
             highlight: [5],
             actions: [
@@ -128,7 +128,7 @@ const PLAYBOOK = {
                 { id: 3, label: '3', color: '#10b981', x: 15, y: 35, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 12.5, y: 35, isBall: false }, 
                 { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 50, isBall: false }, 
-                { id: 6, label: '🏀', color: 'none', x: 1, y: 50, isBall: true }
+                { id: 6, label: '🏀', color: 'none', x: 1, y: 35, isBall: true }
             ],
             highlight: [4],
             actions: [
@@ -143,7 +143,7 @@ const PLAYBOOK = {
                 { id: 3, label: '3', color: '#10b981', x: 40, y: 35, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 35, isBall: false }, 
                 { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 50, isBall: false }, 
-                { id: 6, label: '🏀', color: 'none', x: 1, y: 50, isBall: true }
+                { id: 6, label: '🏀', color: 'none', x: 1, y: 35, isBall: true }
             ],
             highlight: [2, 3],
             actions: [
