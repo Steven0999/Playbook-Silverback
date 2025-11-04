@@ -49,7 +49,7 @@ const PLAYBOOK = {
         { // Step 1: Pass to Wing and Initial Cut
             description: "1 passes to the Wing (2). 1 cuts to the weak side wing. Bigs (4, 5) maintain low post positions in preparation for the screen.",
             positions: [
-                { id: 1, label: '1', color: '#ef4444', x: 10, y: 85, isBall: false },
+                { id: 1, label: '1', color: '#ef4444', x: 10, y: 70, isBall: false },
                 { id: 2, label: '2', color: '#f59e0b', x: 25, y: 15, isBall: false }, 
                 { id: 3, label: '3', color: '#10b981', x: 7.5, y: 85, isBall: false }, 
                 { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 35, isBall: false },
@@ -85,23 +85,21 @@ const PLAYBOOK = {
                 { id: 3, label: '3', color: '#10b981', x: 35, y: 50, isBall: false },
                 { id: 4, label: '4', color: '#3b82f6', x: 10, y: 65, isBall: false }, // P4 (was low) stays low weak side (SWAP)
                 { id: 5, label: '5', color: '#8b5cf6', x: 10, y: 35, isBall: false }, // P5 (was low) cuts to strong low block (SWAP)
-                { id: 6, label: '🏀', color: 'none', x: 25.5, y: 15, isBall: true }
+                { id: 6, label: '🏀', color: 'none', x: 25.5, y: 85, isBall: true }
             ],
             highlight: [2, 4, 5, 6],
-            actions: [
-                {  type: 'pass', fromId: 2, toId: 4},
-                {  type: 'pass', fromId: 2, toId: 5}
+            actions: [] 
         }
     ],
     Stack: [
         { // Step 0: Starting Position (Inbounds)
-            description: "Initial Setup for Stack: Big (5), Guard (3), Big (4), Guard (2) stacked from the block. Inbounder (1) under the basket.",
+            description: "Initial Setup for Stack: Big (4), Guard (3), Big (5), Guard (2) stacked from the block. Inbounder (1) under the basket.",
             positions: [
                 { id: 1, label: '1', color: '#ef4444', x: 1, y: 50, isBall: false }, 
-                { id: 2, label: '2', color: '#f59e0b', x: 15, y: 50, isBall: false }, 
-                { id: 3, label: '3', color: '#10b981', x: 10, y: 50, isBall: false }, 
-                { id: 4, label: '4', color: '#3b82f6', x: 12.5, y: 50, isBall: false }, 
-                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 50, isBall: false }, 
+                { id: 2, label: '2', color: '#f59e0b', x: 7.5, y: 75, isBall: false }, 
+                { id: 3, label: '3', color: '#10b981', x: 7.5, y: 65, isBall: false }, 
+                { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 55, isBall: false }, 
+                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 45, isBall: false }, 
                 { id: 6, label: '🏀', color: 'none', x: 1, y: 50, isBall: true }     
             ],
             highlight: [5, 6],
@@ -111,10 +109,10 @@ const PLAYBOOK = {
             description: "First Big (5) cuts across the key to the opposite low block (= Option 1).",
             positions: [
                 { id: 1, label: '1', color: '#ef4444', x: 1, y: 50, isBall: false }, 
-                { id: 2, label: '2', color: '#f59e0b', x: 15, y: 50, isBall: false }, 
-                { id: 3, label: '3', color: '#10b981', x: 10, y: 50, isBall: false }, 
-                { id: 4, label: '4', color: '#3b82f6', x: 12.5, y: 50, isBall: false }, 
-                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 60, isBall: false }, 
+                { id: 2, label: '2', color: '#f59e0b', x: 7.5, y: 75, isBall: false }, 
+                { id: 3, label: '3', color: '#10b981', x: 7.5, y: 65, isBall: false }, 
+                { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 55, isBall: false }, 
+                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 35, isBall: false }, 
                 { id: 6, label: '🏀', color: 'none', x: 1, y: 50, isBall: true }
             ],
             highlight: [5],
@@ -123,13 +121,13 @@ const PLAYBOOK = {
             ]
         },
         { // Step 2: First Guard Cuts
-            description: "First Guard (3) cuts to the corner (= Option 2 shot).",
+            description: "First Guard (4) cuts to the corner (= Option 2 shot).",
             positions: [
                 { id: 1, label: '1', color: '#ef4444', x: 1, y: 50, isBall: false }, 
-                { id: 2, label: '2', color: '#f59e0b', x: 15, y: 50, isBall: false }, 
-                { id: 3, label: '3', color: '#10b981', x: 10, y: 35, isBall: false }, 
-                { id: 4, label: '4', color: '#3b82f6', x: 12.5, y: 50, isBall: false }, 
-                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 70, isBall: false }, 
+                { id: 2, label: '2', color: '#f59e0b', x: 7.5, y: 75, isBall: false }, 
+                { id: 3, label: '3', color: '#10b981', x: 7.5, y: 65, isBall: false }, 
+                { id: 4, label: '4', color: '#3b82f6', x: 23, y: 15, isBall: false }, 
+                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 35, isBall: false }, 
                 { id: 6, label: '🏀', color: 'none', x: 1, y: 50, isBall: true }
             ],
             highlight: [4],
@@ -138,13 +136,13 @@ const PLAYBOOK = {
             ]
         },
         { // Step 3: Second Big/Guard Cuts and Safety
-            description: "Second Big (4) cuts to the basket (= Option 3). Second Guard (2) cuts to the 3-point line as the safety.",
+            description: "Second Big (3) cuts to the basket (= Option 3). Second Guard (2) cuts to the 3-point line as the safety.",
             positions: [
                 { id: 1, label: '1', color: '#ef4444', x: 1, y: 50, isBall: false }, 
-                { id: 2, label: '2', color: '#f59e0b', x: 40, y: 50, isBall: false }, 
-                { id: 3, label: '3', color: '#10b981', x: 10, y: 35, isBall: false }, 
-                { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 50, isBall: false }, 
-                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 70, isBall: false }, 
+                { id: 2, label: '2', color: '#f59e0b', x: 40, y: 75, isBall: false }, 
+                { id: 3, label: '3', color: '#10b981', x: 7.5, y: 50, isBall: false }, 
+                { id: 4, label: '4', color: '#3b82f6', x: 23, y: 15, isBall: false }, 
+                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 35, isBall: false }, 
                 { id: 6, label: '🏀', color: 'none', x: 1, y: 50, isBall: true }
             ],
             highlight: [2, 3],
@@ -155,11 +153,11 @@ const PLAYBOOK = {
         { // Step 4: Final Options (Ball passed to 2) - 2 now has ball
             description: "Ball is passed to the safety Guard (2). Big (5) sets a **screen** for Big (4) to cut to the basket.",
             positions: [
-                { id: 1, label: '1', color: '#ef4444', x: 1, y: 50, isBall: false }, 
+                { id: 1, label: '1', color: '#ef4444', x: 40, y: 50, isBall: false }, 
                 { id: 2, label: '2', color: '#f59e0b', x: 40, y: 75, isBall: false }, 
-                { id: 3, label: '3', color: '#10b981', x: 10, y: 35, isBall: false }, 
-                { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 70, isBall: false }, 
-                { id: 5, label: '5', color: '#8b5cf6', x: 7.5, y: 40, isBall: false }, 
+                { id: 3, label: '3', color: '#10b981', x: 7.5, y: 50, isBall: false }, 
+                { id: 4, label: '4', color: '#3b82f6', x: 7.5, y: 45, isBall: false }, 
+                { id: 5, label: '5', color: '#8b5cf6', x: 23, y: 15, isBall: false }, 
                 { id: 6, label: '🏀', color: 'none', x: 40.5, y: 75, isBall: true }
             ],
             highlight: [1, 2, 4, 5, 6],
@@ -590,5 +588,4 @@ window.onload = function() {
 };
 
 window.addEventListener('resize', refresh3pt);
-
 
