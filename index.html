@@ -3,81 +3,70 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Interactive Basketball Playbook - Animated</title>
-  <!-- Load Tailwind CSS -->
+  <title>Interactive Basketball Playbook - Silverbacks</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Link to external CSS file -->
   <link rel="stylesheet" href="style.css"> 
 </head>
 <body class="min-h-screen bg-gray-100 p-4 sm:p-8">
-  <!-- Toast Notification (Replaces alert) -->
   <div id="toast-notification" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white p-3 rounded-lg shadow-xl opacity-0 transition-opacity duration-300 z-50"></div>
 
   <h1 class="text-3xl font-extrabold text-gray-800 mb-6 text-center">Silverbacks Playbook</h1>
   
   <div class="w-full max-w-4xl bg-white rounded-xl shadow-2xl p-4 sm:p-6 mb-6">
     <!-- Tabs Navigation -->
-    <div class="flex border-b border-gray-200 overflow-x-auto">
-      <button data-play="Motion" class="play-tab px-4 py-2 text-sm sm:text-base font-semibold border-b-2 border-transparent text-gray-500 hover:text-indigo-600 focus:outline-none transition-colors duration-200 whitespace-nowrap active">
-        Motion
-      </button>
-      <button data-play="Stack" class="play-tab px-4 py-2 text-sm sm:text-base font-semibold border-b-2 border-transparent text-gray-500 hover:text-indigo-600 focus:outline-none transition-colors duration-200 whitespace-nowrap">
-        Stack (Baseline Out)
-      </button>
-      <button data-play="HighLow" class="play-tab px-4 py-2 text-sm sm:text-base font-semibold border-b-2 border-transparent text-gray-500 hover:text-indigo-600 focus:outline-none transition-colors duration-200 whitespace-nowrap">
-        High/Low (Page 6)
-      </button>
+    <div class="flex border-b border-gray-200 overflow-x-auto items-center">
+      <button data-play="Motion" class="play-tab px-4 py-2 font-semibold border-b-2 border-transparent text-gray-500 hover:text-indigo-600 active">Motion</button>
+      <button data-play="Stack" class="play-tab px-4 py-2 font-semibold border-b-2 border-transparent text-gray-500 hover:text-indigo-600">Stack (Baseline Out)</button>
+      <button data-play="HighLow" class="play-tab px-4 py-2 font-semibold border-b-2 border-transparent text-gray-500 hover:text-indigo-600">High/Low (Page 6)</button>
+
+      <!-- Simple Dropdown for More Plays -->
+      <div class="relative ml-2">
+        <button id="moreDropdownBtn" class="px-4 py-2 font-semibold border-b-2 border-transparent text-gray-500 hover:text-indigo-600 focus:outline-none">
+          More Plays ▼
+        </button>
+        <div id="moreDropdown" class="hidden absolute z-20 bg-white border border-gray-200 rounded-lg shadow-lg mt-2 w-48">
+          <button data-play="Dallas" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Dallas</button>
+          <button data-play="Michigan" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Michigan</button>
+          <button data-play="Shallow" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Shallow</button>
+          <button data-play="Sparks" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Sparks</button>
+          <button data-play="Triangle" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Triangle</button>
+          <button data-play="FiveOut" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">5 Out</button>
+          <button data-play="Box" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Box</button>
+          <button data-play="Palm" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Palm</button>
+          <button data-play="Duke" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Duke</button>
+          <button data-play="Scorchers" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Scorchers</button>
+          <button data-play="Christmas" class="dropdown-item block w-full text-left px-4 py-2 hover:bg-indigo-100">Christmas</button>
+        </div>
+      </div>
     </div>
 
-    <!-- Play Instructions -->
-    <div id="play-instructions" class="mt-4 p-3 bg-indigo-50 rounded-lg text-gray-700 text-sm sm:text-base">
-      <p id="play-description" class="font-medium">Select a play above to begin, then use the "Next Step" or "Play" buttons to run the play sequence.</p>
+    <div id="play-instructions" class="mt-4 p-3 bg-indigo-50 rounded-lg text-gray-700">
+      <p id="play-description" class="font-medium">Select a play above or from “More Plays ▼”.</p>
     </div>
 
-    <!-- Controls for Sequencing and Court View -->
     <div class="controls flex flex-wrap justify-center items-center gap-3 mt-5">
-      
-      <!-- Play/Pause Button -->
-      <button 
-        id="play-pause-button" 
-        class="bg-indigo-600 hover:bg-indigo-700 shadow-lg text-white rounded-full w-14 h-14 p-2 transition-all duration-300 pause-state" 
-        aria-label="Play or Pause Animation"
-      >
+      <button id="play-pause-button" class="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full w-14 h-14 p-2 pause-state relative" aria-label="Play or Pause Animation">
         <div id="bar1" class="icon-bar"></div>
         <div id="bar2" class="icon-bar"></div>
         <div id="bar3" class="icon-bar"></div>
       </button>
-
-      <button id="toggle" class="bg-indigo-500 text-white hover:bg-indigo-600 rounded-lg p-2 transition-colors">Toggle: Full Court → Half Court</button>
-      
-      <button id="reset-play" class="bg-red-500 text-white hover:bg-red-600 rounded-lg p-2 transition-colors">Reset Play</button>
-      
-      <button id="prev-step" class="bg-gray-300 text-gray-800 hover:bg-gray-400 disabled:opacity-50 font-bold rounded-lg p-2 transition-colors">
-        ← Prev
-      </button>
-      <button id="next-step" class="bg-green-500 text-white hover:bg-green-600 disabled:opacity-50 font-bold rounded-lg p-2 transition-colors">
-        Next Step →
-      </button>
+      <button id="toggle" class="bg-indigo-500 text-white hover:bg-indigo-600 rounded-lg p-2">Toggle: Full Court → Half Court</button>
+      <button id="reset-play" class="bg-red-500 text-white hover:bg-red-600 rounded-lg p-2">Reset Play</button>
+      <button id="prev-step" class="bg-gray-300 text-gray-800 hover:bg-gray-400 font-bold rounded-lg p-2">← Prev</button>
+      <button id="next-step" class="bg-green-500 text-white hover:bg-green-600 font-bold rounded-lg p-2">Next Step →</button>
     </div>
   </div>
 
   <div class="court-container" id="court">
     <div class="court-inner" id="courtInner">
-      <!-- SVG Court Rendering (NBA 94x50) -->
-      <svg id="courtSVG" viewBox="0 0 940 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-        <!-- Main Court Surface -->
+      <svg id="courtSVG" viewBox="0 0 940 500" preserveAspectRatio="xMidYMid meet">
         <rect x="0" y="0" width="940" height="500" fill="var(--court-fill)" />
-        <!-- Court Boundary -->
         <rect x="6" y="6" width="928" height="488" rx="6" fill="none" stroke="var(--border-color)" stroke-width="6" />
-        
-        <!-- Center Line and Circle -->
         <line id="midLine" x1="470" y1="0" x2="470" y2="500" stroke="var(--line)" stroke-width="5" />
         <circle id="midCircle" cx="470" cy="250" r="60" fill="none" stroke="var(--line)" stroke-width="5" />
-        
-        <!-- Dynamic Actions Group -->
         <g id="actionLines"></g>
 
-        <!-- Left End (Baseline) -->
+        <!-- Left and Right Ends -->
         <g id="leftEnd">
           <rect x="0" y="170" width="190" height="160" fill="none" stroke="var(--line)" stroke-width="5" />
           <circle cx="190" cy="250" r="60" fill="none" stroke="var(--line)" stroke-width="5" />
@@ -87,7 +76,6 @@
           <path id="left3pt" fill="none" stroke="var(--line)" stroke-width="5" />
         </g>
 
-        <!-- Right End (Baseline) -->
         <g id="rightEnd">
           <rect x="750" y="170" width="190" height="160" fill="none" stroke="var(--line)" stroke-width="5" />
           <circle cx="750" cy="250" r="60" fill="none" stroke="var(--line)" stroke-width="5" />
@@ -99,7 +87,7 @@
       </svg>
     </div>
   </div>
-  
+
   <script src="script.js"></script>
 </body>
-</html>
+            </html>
